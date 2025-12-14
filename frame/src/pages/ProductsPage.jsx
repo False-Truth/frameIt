@@ -1,13 +1,17 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
 import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ProductsPage = () => {
   const [sortBy, setSortBy] = useState('default');
   const [sizeFilter, setSizeFilter] = useState('all');
   const [priceRange, setPriceRange] = useState({ min: 0, max: 5000 });
+
+  // Initialize scroll animations
+  useScrollAnimation();
 
   // Get unique sizes for filter
   const uniqueSizes = useMemo(() => {
