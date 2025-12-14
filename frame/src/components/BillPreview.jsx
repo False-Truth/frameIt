@@ -52,7 +52,7 @@ const BillPreview = ({ customerInfo, orderItems, billNumber }) => {
       <div style={{ borderBottom: '2px solid #1f2937', paddingBottom: '24px', marginBottom: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
-            <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#1f2937', marginBottom: '8px' }}>FrameIt Studio</h1>
+            <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#1f2937', marginBottom: '8px' }}>PPS Photo Frames</h1>
             <p style={{ color: '#6b7280', fontStyle: 'italic' }}>Professional Photography & Framing Services</p>
           </div>
           <div style={{ textAlign: 'right' }}>
@@ -74,21 +74,21 @@ const BillPreview = ({ customerInfo, orderItems, billNumber }) => {
           <div style={{ fontSize: '14px', color: '#6b7280' }}>
             <p style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '4px' }}>
               <MapPin size={14} style={{ marginTop: '2px', flexShrink: 0 }} />
-              <span>123 Photography Street, Studio Complex<br />
-              Mumbai, Maharashtra - 400001<br />
+              <span>Opp DLF Phase 2, In Front of Metro Pillar No 67 A<br />
+             Gurugram, Haryana 122002<br />
               India</span>
             </p>
             <p style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
               <Phone size={14} />
-              <span>+91 98765 43210</span>
+              <span>+91 9810774052</span>
             </p>
             <p style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
               <Mail size={14} />
-              <span>billing@frameitstudio.com</span>
+              <span>ppssharmaartgallery@gmail.com</span>
             </p>
             <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Globe size={14} />
-              <span>www.frameitstudio.com</span>
+              <span>www.PPSPhotoFrames.com</span>
             </p>
           </div>
         </div>
