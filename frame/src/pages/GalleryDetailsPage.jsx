@@ -18,8 +18,8 @@ import {
 } from 'lucide-react';
 
 const getBaseUrl = () => {
-  if (import.meta.env.DEV) return '/';
-  return '/frameIt/';
+  if (import.meta.env.DEV) return '/images/';
+  return '/frameIt/images/';
 };
 
 const GalleryDetailsPage = () => {
@@ -36,15 +36,15 @@ const GalleryDetailsPage = () => {
     const fetchProject = () => {
       setLoading(true);
       
-      // Find the project by ID
-      const foundProject = galleryItems.find(item => item.id === parseInt(id));
+      // Find the project by ID - compare as strings
+      const foundProject = galleryItems.find(item => String(item.id) === String(id));
       
       if (foundProject) {
         setProject(foundProject);
         
         // Find related items (same category, excluding current item)
         const related = galleryItems
-          .filter(item => item.category === foundProject.category && item.id !== parseInt(id))
+          .filter(item => item.category === foundProject.category && String(item.id) !== String(id))
           .slice(0, 4);
         setRelatedItems(related);
       }
@@ -174,15 +174,15 @@ const GalleryDetailsPage = () => {
             {/* Image Slider */}
             <div className="bg-white rounded-lg shadow-md p-6 mb-8">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">Project Gallery</h2>
-              {project.images.length > 1 ? (
+              {project.images && project.images.length > 1 ? (
                 <ImageSlider 
-                  images={project.images} 
+                  images={project.images.map(img => `${getBaseUrl()}${img}`)} 
                   alt={project.title}
                 />
               ) : (
                 <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                   <img
-                    src={project.coverImage}
+                    src={`${getBaseUrl()}${project.coverImage || project.image}`}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -303,7 +303,7 @@ const GalleryDetailsPage = () => {
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                     <img
-                      src={item.coverImage}
+                      src={`${getBaseUrl()}${item.image}`}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

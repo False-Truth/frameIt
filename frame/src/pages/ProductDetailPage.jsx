@@ -31,7 +31,7 @@ const ProductDetailPage = () => {
   }, []);
 
   // Find product by ID
-  const product = products.find(p => p.id === parseInt(id));
+  const product = products.find(p => p.id === id);
 
   // If product not found, show 404
   if (!product) {
@@ -118,11 +118,11 @@ const ProductDetailPage = () => {
           {/* Product Images */}
           <div>
             {hasMultipleImages ? (
-              <ImageSlider images={product.images} alt={product.title} />
+              <ImageSlider images={product.images.map(img => `${getBaseUrl()}${img}`)} alt={product.title} />
             ) : (
               <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
                 <img
-                  src={product.image}
+                  src={`${getBaseUrl()}${product.image}`}
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />

@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Eye, Calendar } from 'lucide-react';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/images/';
+  return '/frameIt/images/';
+};
+
 const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
   const handleClick = () => {
     if (onClick) {
@@ -25,7 +30,7 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
         <img
-          src={coverImage}
+          src={`${getBaseUrl()}${coverImage}`}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           onError={handleImageError}
