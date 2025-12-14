@@ -3,6 +3,28 @@ import { Link } from 'react-router-dom';
 import Card from './ui/Card';
 import Button from './ui/Button';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
+};
+
+const formatImagePath = (imagePath) => {
+  if (!imagePath) return '';
+  
+  // If it's already a full URL, return as is
+  if (imagePath.startsWith('http')) {
+    return imagePath;
+  }
+  
+  // If it already starts with the base path, don't double it
+  if (imagePath.startsWith(getBaseUrl())) {
+    return imagePath;
+  }
+  
+  // Combine base URL with image path
+  return `${getBaseUrl()}${imagePath}`;
+};
+
 const ProductCard = ({ 
   image, 
   title, 
@@ -15,7 +37,7 @@ const ProductCard = ({
     <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       <div className="aspect-square overflow-hidden bg-blue-100 relative">
         <img
-          src={image}
+          src={formatImagePath(image)}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import ImageSlider from '../components/ui/ImageSlider';
@@ -15,10 +15,20 @@ import {
   RefreshCw
 } from 'lucide-react';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
+};
+
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState('');
   const [liked, setLiked] = useState(false);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Find product by ID
   const product = products.find(p => p.id === parseInt(id));

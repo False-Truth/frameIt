@@ -29,6 +29,9 @@ const GalleryDetailsPage = () => {
   const [relatedItems, setRelatedItems] = useState([]);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     // Simulate loading and fetch project data
     const fetchProject = () => {
       setLoading(true);
@@ -179,7 +182,7 @@ const GalleryDetailsPage = () => {
               ) : (
                 <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                   <img
-                    src={`${getBaseUrl()}${project.coverImage}`}
+                    src={project.coverImage}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -300,7 +303,7 @@ const GalleryDetailsPage = () => {
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                     <img
-                      src={`${getBaseUrl()}${item.coverImage}`}
+                      src={item.coverImage}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

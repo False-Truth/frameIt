@@ -20,6 +20,23 @@ const ImageSlider = ({
     );
   }
 
+  const formatImagePath = (imagePath) => {
+    if (!imagePath) return '';
+    
+    // If it's already a full URL, return as is
+    if (imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    
+    // If it already starts with the base path, don't double it
+    if (imagePath.startsWith(getBaseUrl())) {
+      return imagePath;
+    }
+    
+    // Combine base URL with image path
+    return `${getBaseUrl()}${imagePath}`;
+  };
+
   const goToPrevious = () => {
     const isFirstImage = currentIndex === 0;
     const newIndex = isFirstImage ? images.length - 1 : currentIndex - 1;
@@ -40,7 +57,7 @@ const ImageSlider = ({
     <div className={`relative ${className}`}>
       <div className="aspect-square">
         <img
-          src={`${getBaseUrl()}${images[currentIndex]}`}
+          src={formatImagePath(images[currentIndex])}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover rounded-lg"
         />
