@@ -179,7 +179,7 @@ const BillingPage = () => {
                 {orderItems.some(item => item.name && item.price) && (
                   <>
                     <hr className="my-3" />
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-sm sm:text-base">
                       <span className="text-slate-600">Subtotal:</span>
                       <span className="font-medium">
                         ₹{orderItems.reduce((sum, item) => {
@@ -190,7 +190,7 @@ const BillingPage = () => {
                         }, 0).toFixed(2)}
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-sm sm:text-base">
                       <span className="text-slate-600">Est. GST:</span>
                       <span className="font-medium">
                         ₹{orderItems.reduce((sum, item) => {
@@ -204,7 +204,7 @@ const BillingPage = () => {
                         }, 0).toFixed(2)}
                       </span>
                     </div>
-                    <div className="flex justify-between text-lg font-bold text-indigo-600">
+                    <div className="flex justify-between text-base sm:text-lg font-bold text-indigo-600">
                       <span>Est. Total:</span>
                       <span>
                         ₹{orderItems.reduce((sum, item) => {
@@ -224,9 +224,9 @@ const BillingPage = () => {
             </div>
 
             {/* Instructions */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-blue-900 mb-3">How to Create Bill</h3>
-              <ol className="space-y-2 text-sm text-blue-800">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-blue-900 mb-2 sm:mb-3">How to Create Bill</h3>
+              <ol className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-blue-800">
                 <li className="flex gap-2">
                   <span className="font-semibold">1.</span>
                   <span>Fill in customer information</span>
