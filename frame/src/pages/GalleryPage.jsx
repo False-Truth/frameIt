@@ -3,6 +3,7 @@ import { galleryItems } from '../data/gallery';
 import GalleryCard from '../components/GalleryCard';
 import SectionHeading from '../components/ui/SectionHeading';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Filter, Grid3X3, List, Search } from 'lucide-react';
 
 const GalleryPage = () => {
@@ -10,6 +11,13 @@ const GalleryPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [loading, setLoading] = useState(false);
+
+  // Scroll animations
+  const heroRef = useScrollAnimation('fadeUp');
+  const filtersRef = useScrollAnimation('fadeUp', 0.2);
+  const statsRef = useScrollAnimation('scaleUp', 0.3);
+  const ctaRef = useScrollAnimation('fadeUp', 0.4);
+  const galleryRef = useScrollAnimation('fadeIn', 0.1);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -51,21 +59,21 @@ const GalleryPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <SectionHeading
-            title="Our Gallery"
-            subtitle="Explore our collection of beautiful photo frames and custom artwork projects"
-            center
-          />
-          <p className="text-gray-600 max-w-3xl mx-auto mt-4">
-            Browse through our completed projects, custom frame designs, and artwork showcases. 
-            Each piece tells a unique story of craftsmanship and creativity.
-          </p>
-        </div>
+      {/* Page Header */}
+      <div ref={heroRef} className="text-center mb-12">
+        <SectionHeading
+          title="Our Gallery"
+          subtitle="Explore our collection of beautiful photo frames and custom artwork projects"
+          center
+        />
+        <p className="text-gray-600 max-w-3xl mx-auto mt-4">
+          Browse through our completed projects, custom frame designs, and artwork showcases. 
+          Each piece tells a unique story of craftsmanship and creativity.
+        </p>
+      </div>
 
-        {/* Filters and Controls */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      {/* Filters and Controls */}
+      <div ref={filtersRef} className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
             {/* Category Filters */}
             <div className="flex items-center space-x-3">
@@ -142,20 +150,20 @@ const GalleryPage = () => {
         {!loading && (
           <>
             {filteredItems.length > 0 ? (
-              <div className={
+              <div ref={galleryRef} className={
                 viewMode === 'grid'
                   ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
                   : 'space-y-6'
               }>
                 {filteredItems.map((item) => (
-                  <GalleryCard
-                    key={item.id}
-                    id={item.id}
-                    title={item.title}
-                    category={item.category}
-                    coverImage={item.coverImage}
-                    date={item.date}
-                  />
+            <GalleryCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              category={item.category}
+              coverImage={item.images && item.images.length > 0 ? item.images[0] : item.coverImage}
+              date={item.date}
+            />
                 ))}
               </div>
             ) : (
@@ -194,7 +202,7 @@ const GalleryPage = () => {
         )}
 
         {/* Additional Info Section */}
-        <div className="mt-16 bg-amber-50 rounded-lg p-8">
+        <div ref={statsRef} className="mt-16 bg-amber-50 rounded-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-amber-600 mb-2">
@@ -218,7 +226,7 @@ const GalleryPage = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 text-center">
+        <div ref={ctaRef} className="mt-12 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Have a Custom Project in Mind?
           </h2>

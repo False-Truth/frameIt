@@ -10,7 +10,7 @@ const Footer = () => {
       href: 'https://facebook.com',
       icon: (
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47p.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25p.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
         </svg>
       ),
     },
@@ -60,18 +60,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-10 sm:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <div className="text-2xl font-bold text-indigo-400">
+              <div className="text-2xl font-bold text-blue-500">
                 PPS
               </div>
-              <span className="ml-2 text-lg text-gray-300">Photo Frames</span>
+              <span className="ml-2 text-lg text-white">Photo Frames</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-white mb-4 max-w-md">
               Premium Photo Frames & Handmade Paintings. We specialize in creating beautiful, custom frames and artwork that preserve your precious memories for a lifetime.
             </p>
             <div className="flex space-x-4">
@@ -81,7 +81,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-indigo-400 transition-colors duration-200"
+                  className="text-white hover:text-blue-500 transition-colors duration-200"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -92,13 +92,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-indigo-400">Quick Links</h3>
+            <p className="text-3xl font-semibold mb-4 text-blue-500">Quick Links</p>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-indigo-400 transition-colors duration-200"
+                    className="text-white hover:text-blue-500 transition-colors duration-200"
                   >
                     {link.name}
                   </Link>
@@ -109,10 +109,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-indigo-400">Our Services</h3>
+            <p className="text-3xl font-semibold mb-4 text-blue-500 ">Our Services</p>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service} className="text-gray-300">
+                <li key={service} className="text-white">
                   {service}
                 </li>
               ))}
@@ -121,26 +121,26 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        <div className="border-t border-white/20 mt-8 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div>
-              <h4 className="font-semibold text-indigo-400 mb-2">Address</h4>
-              <p className="text-gray-300">
+              <p className="font-semibold text-blue-500 mb-2">Address</p>
+              <p className="text-white">
                 123 Art Street, Creative District<br />
                 New City, State 12345<br />
                 India
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-indigo-400 mb-2">Contact</h4>
-              <p className="text-gray-300">
+              <p className="font-semibold text-blue-500 mb-2">Contact</p>
+              <p className="text-white">
                 Phone: +91 98765 43210<br />
                 Email: info@ppsphotoframes.com
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-indigo-400 mb-2">Business Hours</h4>
-              <p className="text-gray-300">
+              <p className="font-semibold text-blue-500 mb-2">Business Hours</p>
+              <p className="text-white">
                 Mon - Sat: 9:00 AM - 8:00 PM<br />
                 Sunday: 10:00 AM - 6:00 PM
               </p>
@@ -149,8 +149,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
+        <div className="border-t border-white/20 mt-8 pt-8 text-center">
+          <p className="text-white">
             © {currentYear} PPS Photo Frames. All rights reserved. | 
             Designed with ❤️ for art lovers
           </p>
