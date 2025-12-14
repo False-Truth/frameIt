@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Eye, Calendar } from 'lucide-react';
 
 const getBaseUrl = () => {
-  if (import.meta.env.DEV) return '/images/';
-  return '/frameIt/images/';
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
 };
 
 const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {

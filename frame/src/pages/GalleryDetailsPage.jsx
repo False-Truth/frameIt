@@ -18,8 +18,8 @@ import {
 } from 'lucide-react';
 
 const getBaseUrl = () => {
-  if (import.meta.env.DEV) return '/images/';
-  return '/frameIt/images/';
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
 };
 
 const GalleryDetailsPage = () => {
@@ -303,7 +303,7 @@ const GalleryDetailsPage = () => {
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                     <img
-                      src={`${getBaseUrl()}${item.image}`}
+                      src={`${getBaseUrl()}${item.coverImage}`}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

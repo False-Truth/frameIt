@@ -30,8 +30,8 @@ const ProductDetailPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Find product by ID
-  const product = products.find(p => p.id === id);
+  // Find product by ID - compare as strings since URL params are strings
+  const product = products.find(p => String(p.id) === String(id));
 
   // If product not found, show 404
   if (!product) {
