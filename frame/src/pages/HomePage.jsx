@@ -113,7 +113,7 @@ const HomePage = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: 'url(/images/heroimage.jpg)',
+            backgroundImage: 'url(/images/photo-1737911330204-7764a5c79e9f.avif)',
             opacity: '0.6'
           }}
         ></div>

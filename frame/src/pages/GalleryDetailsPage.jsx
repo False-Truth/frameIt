@@ -17,6 +17,7 @@ import {
   Package
 } from 'lucide-react';
 
+
 const GalleryDetailsPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState(null);
@@ -174,7 +175,7 @@ const GalleryDetailsPage = () => {
               ) : (
                 <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                   <img
-                    src={project.coverImage}
+                    src={`${import.meta.env.BASE_URL}${project.coverImage}`}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -295,7 +296,7 @@ const GalleryDetailsPage = () => {
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                     <img
-                      src={item.coverImage}
+                      src={`${import.meta.env.BASE_URL}${item.coverImage}`}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
