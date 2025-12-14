@@ -187,3 +187,60 @@ h4 {
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Prevent white screen flash - ensure elements are visible initially */
+.animate-on-scroll,
+.hero-content,
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-buttons,
+.photo-frame {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Only apply animations after page is fully loaded */
+body.loaded .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.loaded .hero-content {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+body.loaded .hero-title {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+body.loaded .hero-subtitle {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+body.loaded .hero-description {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.loaded .hero-buttons {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Ensure background is immediately visible */
+.hero-photo-background {
+  opacity: 1 !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Critical hero section styles to prevent flash */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}

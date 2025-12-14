@@ -126,23 +126,23 @@ const Footer = () => {
             <div>
               <p className="font-semibold text-blue-500 mb-2">Address</p>
               <p className="text-white">
-                123 Art Street, Creative District<br />
-                New City, State 12345<br />
+                Near Sikanderpur Metro station, Opp DLF Phase 2, In Front of Metro Pillar No 67 A, Gurugram, Haryana 122002
+<br />
                 India
               </p>
             </div>
             <div>
               <p className="font-semibold text-blue-500 mb-2">Contact</p>
               <p className="text-white">
-                Phone: +91 98765 43210<br />
-                Email: info@ppsphotoframes.com
+                Phone: +91 9810774052<br />
+                Email: ppssharmaartgallery@gmail.com
               </p>
             </div>
             <div>
               <p className="font-semibold text-blue-500 mb-2">Business Hours</p>
               <p className="text-white">
-                Mon - Sat: 9:00 AM - 8:00 PM<br />
-                Sunday: 10:00 AM - 6:00 PM
+                Wed - Mon: 11:00 AM - 8:00 PM<br />
+                Tue: 11:00 AM - 7:00 PM
               </p>
             </div>
           </div>

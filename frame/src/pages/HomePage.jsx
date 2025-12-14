@@ -1,16 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import SectionHeading from '../components/ui/SectionHeading';
 import { products } from '../data/products';
 import { galleryItems } from '../data/gallery';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const HomePage = () => {
   // Get first 4 products for preview
   const featuredProducts = products.slice(0, 4);
   // Get first 6 gallery items for preview
   const featuredGallery = galleryItems.slice(0, 6);
+
+  // Apply scroll animations
+  useScrollAnimation('.animate-on-scroll', {
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2
+  });
+
+  useScrollAnimation('.animate-on-scroll-left', {
+    x: -100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15
+  });
+
+  useScrollAnimation('.animate-on-scroll-right', {
+    x: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15
+  });
+
+  useEffect(() => {
+    // Add global smooth scrolling
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Add body loaded class for animations
+    document.body.classList.add('body-loaded');
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+      document.body.classList.remove('body-loaded');
+    };
+  }, []);
 
   const highlights = [
     {
@@ -72,17 +108,15 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] sm:h-screen flex items-center justify-center">
-        <div className="" />
+      <section className="relative min-h-[85vh] sm:h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url("/images/heroimage.jpg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url(/images/heroimage.jpg)',
+            opacity: '0.6'
           }}
-        />
+        ></div>
         
         <div className="relative z-20 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
@@ -113,7 +147,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {highlights.map((highlight, index) => (
-              <Card key={index} className="text-center p-4 sm:p-6 hover:shadow-lg transition-all hover:scale-105">
+              <Card key={index} className="text-center p-4 sm:p-6 hover:shadow-lg transition-all hover:scale-105 animate-on-scroll">
                 <div className="text-blue-600 mb-4 flex justify-center">
                   {highlight.icon}
                 </div>
@@ -137,7 +171,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {featuredGallery.map((item) => (
               <Link key={item.id} to={`/gallery/${item.id}`}>
-                <Card className="overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-105 group">
+                <Card className="overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-105 group animate-on-scroll">
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={item.coverImage}
@@ -176,7 +210,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {featuredProducts.map((product) => (
               <Link key={product.id} to={`/products/${product.id}`}>
-                <Card className="overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-105 group">
+                <Card className="overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-105 group animate-on-scroll">
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={product.image}
