@@ -5,10 +5,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const getBaseUrl = () => {
-  if (import.meta.env.DEV) return '/';
-  return '/frameIt/';
-};
+
 
 const ProductsPage = () => {
   const [sortBy, setSortBy] = useState('default');
@@ -151,7 +148,7 @@ const ProductsPage = () => {
               <ProductCard
                 key={product.id}
                 id={product.id}
-                image={`${getBaseUrl()}${product.image}`}
+                image={`${product.image}`}
                 title={product.title}
                 price={product.price}
                 size={product.size}

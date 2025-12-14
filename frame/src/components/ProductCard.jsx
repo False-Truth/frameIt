@@ -7,22 +7,22 @@ const getBaseUrl = () => {
   return '/';
 };
 
-const formatImagePath = (imagePath) => {
-  if (!imagePath) return '';
+// const formatImagePath = (imagePath) => {
+//   if (!imagePath) return '';
   
-  // If it's already a full URL, return as is
-  if (imagePath.startsWith('http')) {
-    return imagePath;
-  }
+//   // If it's already a full URL, return as is
+//   if (imagePath.startsWith('http')) {
+//     return imagePath;
+//   }
   
-  // If it already starts with the base path, don't double it
-  if (imagePath.startsWith(getBaseUrl())) {
-    return imagePath;
-  }
+//   // If it already starts with the base path, don't double it
+//   if (imagePath.startsWith(getBaseUrl())) {
+//     return imagePath;
+//   }
   
-  // Combine base URL with image path
-  return `${getBaseUrl()}${imagePath}`;
-};
+//   // Combine base URL with image path
+//   return `${getBaseUrl()}${imagePath}`;
+// };
 
 const ProductCard = ({ 
   image, 
@@ -36,7 +36,7 @@ const ProductCard = ({
     <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       <div className="aspect-square overflow-hidden bg-blue-100 relative">
         <img
-          src={formatImagePath(image)}
+          src={`${getBaseUrl()}${image}`}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
