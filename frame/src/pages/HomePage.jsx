@@ -72,12 +72,12 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] sm:h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+      <section className="relative min-h-[85vh] sm:h-screen flex items-center justify-center">
+        <div className="" />
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
+            backgroundImage: 'url("/images/heroimage.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -87,20 +87,20 @@ const HomePage = () => {
         <div className="relative z-20 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             <span className="block">Premium Photo</span>
-            <span className="block text-amber-400">Frames &</span>
+            <span className="block">Frames &</span>
             <span className="block">Handmade Paintings</span>
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-600 sm:mb-8 text-blue-100 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-blue-900 max-w-2xl mx-auto">
             Transform your memories into timeless art with our exquisite collection of custom frames and handmade artwork
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link to="/products">
-              <Button size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 shadow-2xl hover:shadow-amber-500/25">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 bg-white/10 border-white text-blue-900 hover:bg-white hover:text-blue-600 backdrop-blur-sm">
                 View Products
               </Button>
             </Link>
             <Link to="/gallery">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 bg-white/10 border-white text-blue-900 hover:bg-white hover:text-blue-600 backdrop-blur-sm">
                 View Gallery
               </Button>
             </Link>
@@ -114,7 +114,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {highlights.map((highlight, index) => (
               <Card key={index} className="text-center p-4 sm:p-6 hover:shadow-lg transition-all hover:scale-105">
-                <div className="text-amber-600 mb-4 flex justify-center">
+                <div className="text-blue-600 mb-4 flex justify-center">
                   {highlight.icon}
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-2">{highlight.title}</h3>
@@ -147,7 +147,7 @@ const HomePage = () => {
                   </div>
                   <div className="p-3 sm:p-4">
                     <h3 className="font-semibold text-base sm:text-lg mb-1 line-clamp-1">{item.title}</h3>
-                    <p className="text-amber-600 text-xs sm:text-sm">{item.category}</p>
+                    <p className="text-blue-600 text-xs sm:text-sm">{item.category}</p>
                   </div>
                 </Card>
               </Link>
@@ -187,7 +187,7 @@ const HomePage = () => {
                   <div className="p-3 sm:p-4">
                     <h3 className="font-semibold text-base sm:text-lg mb-1 line-clamp-2">{product.title}</h3>
                     <p className="text-gray-600 text-xs sm:text-sm mb-2">{product.size}</p>
-                    <p className="text-amber-600 font-bold text-base sm:text-lg">₹{product.price}</p>
+                    <p className="text-blue-600 font-bold text-base sm:text-lg">₹{product.price}</p>
                   </div>
                 </Card>
               </Link>
@@ -218,7 +218,7 @@ const HomePage = () => {
               <Card key={index} className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
                 <div className="flex mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 fill-current" viewBox="0 0 20 20">
                       <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                     </svg>
                   ))}

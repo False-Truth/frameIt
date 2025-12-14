@@ -3,11 +3,11 @@ export const galleryItems = [
     id: 1,
     title: "Radha Krishna Painting",
     category: "Religious Art",
-    coverImage: "/gallery/rk1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper.jpg",
     images: [
-      "/gallery/rk1.jpg",
-      "/gallery/rk2.jpg",
-      "/gallery/rk3.jpg"
+      "/images/wallpaperflare.com_wallpaper.jpg",
+      "/images/wallpaperflare.com_wallpaper1.jpg",
+      "/images/wallpaperflare.com_wallpaper (1).jpg"
     ],
     video: "https://youtube.com/embed/example1",
     description: "A detailed hand-made canvas painting depicting the divine love of Radha Krishna, created with vibrant colors and intricate details."
@@ -16,10 +16,10 @@ export const galleryItems = [
     id: 2,
     title: "Landscape Sunset",
     category: "Landscape",
-    coverImage: "/gallery/landscape1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper1.jpg",
     images: [
-      "/gallery/landscape1.jpg",
-      "/gallery/landscape2.jpg"
+      "/images/wallpaperflare.com_wallpaper1.jpg",
+      "/images/wallpaperflare.com_wallpaper.jpg"
     ],
     description: "Beautiful sunset landscape painting capturing the golden hour with stunning color transitions."
   },
@@ -27,10 +27,10 @@ export const galleryItems = [
     id: 3,
     title: "Custom Family Portrait",
     category: "Portrait",
-    coverImage: "/gallery/portrait1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper (1).jpg",
     images: [
-      "/gallery/portrait1.jpg",
-      "/gallery/portrait2.jpg"
+      "/images/wallpaperflare.com_wallpaper (1).jpg",
+      "/images/wallpaperflare.com_wallpaper.jpg"
     ],
     description: "Personalized family portrait commissioned for a special anniversary celebration."
   },
@@ -38,10 +38,10 @@ export const galleryItems = [
     id: 4,
     title: "Abstract Modern Art",
     category: "Abstract",
-    coverImage: "/gallery/abstract1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper.jpg",
     images: [
-      "/gallery/abstract1.jpg",
-      "/gallery/abstract2.jpg"
+      "/images/wallpaperflare.com_wallpaper.jpg",
+      "/images/wallpaperflare.com_wallpaper1.jpg"
     ],
     description: "Contemporary abstract piece using bold colors and dynamic brush strokes."
   },
@@ -49,11 +49,11 @@ export const galleryItems = [
     id: 5,
     title: "Taj Mahal Frame",
     category: "Monument",
-    coverImage: "/gallery/taj1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper1.jpg",
     images: [
-      "/gallery/taj1.jpg",
-      "/gallery/taj2.jpg",
-      "/gallery/taj3.jpg"
+      "/images/wallpaperflare.com_wallpaper1.jpg",
+      "/images/wallpaperflare.com_wallpaper (1).jpg",
+      "/images/wallpaperflare.com_wallpaper.jpg"
     ],
     video: "https://youtube.com/embed/example2",
     description: "Elegant framing of the Taj Mahal with custom decorative borders and archival quality materials."
@@ -62,10 +62,10 @@ export const galleryItems = [
     id: 6,
     title: "Nature floral",
     category: "Nature",
-    coverImage: "/gallery/floral1.jpg",
+    coverImage: "/images/wallpaperflare.com_wallpaper (1).jpg",
     images: [
-      "/gallery/floral1.jpg",
-      "/gallery/floral2.jpg"
+      "/images/wallpaperflare.com_wallpaper (1).jpg",
+      "/images/wallpaperflare.com_wallpaper1.jpg"
     ],
     description: "Delicate floral composition featuring seasonal blooms in a harmonious arrangement."
   }

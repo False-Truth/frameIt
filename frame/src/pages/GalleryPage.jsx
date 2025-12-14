@@ -148,14 +148,14 @@ const GalleryPage = () => {
                   : 'space-y-6'
               }>
                 {filteredItems.map((item) => (
-                  <GalleryCard
-                    key={item.id}
-                    id={item.id}
-                    title={item.title}
-                    category={item.category}
-                    coverImage={item.coverImage}
-                    date={item.date}
-                  />
+            <GalleryCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              category={item.category}
+              coverImage={item.images && item.images.length > 0 ? item.images[0] : item.coverImage}
+              date={item.date}
+            />
                 ))}
               </div>
             ) : (

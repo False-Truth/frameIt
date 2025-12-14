@@ -4,9 +4,9 @@ export const products = [
     title: "Premium Wooden Frame",
     price: 899,
     size: "12x18 inches",
-    image: "/images/frames/frame1.jpg",
+    image: "/images/wallpaperflare.com_wallpaper.jpg",
     description: "High quality wooden frame with elegant finish.",
-    images: ["/images/frames/frame1.jpg", "/images/frames/frame1b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper.jpg", "/images/wallpaperflare.com_wallpaper1.jpg"],
     category: "Wooden Frame"
   },
   {
@@ -14,9 +14,9 @@ export const products = [
     title: "Classic Metal Frame",
     price: 1299,
     size: "16x20 inches",
-    image: "/images/frames/frame2.jpg",
+    image: "/images/wallpaperflare.com_wallpaper1.jpg",
     description: "Durable metal frame with modern design.",
-    images: ["/images/frames/frame2.jpg", "/images/frames/frame2b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper1.jpg", "/images/wallpaperflare.com_wallpaper.jpg"],
     category: "Metal Frame"
   },
   {
@@ -24,9 +24,9 @@ export const products = [
     title: "Antique Victorian Frame",
     price: 2499,
     size: "18x24 inches",
-    image: "/images/frames/frame3.jpg",
+    image: "/images/wallpaperflare.com_wallpaper (1).jpg",
     description: "Vintage-style ornate frame with intricate details.",
-    images: ["/images/frames/frame3.jpg", "/images/frames/frame3b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper (1).jpg", "/images/wallpaperflare.com_wallpaper.jpg"],
     category: "Antique Frame"
   },
   {
@@ -34,9 +34,9 @@ export const products = [
     title: "Minimalist Glass Frame",
     price: 799,
     size: "8x10 inches",
-    image: "/images/frames/frame4.jpg",
+    image: "/images/wallpaperflare.com_wallpaper.jpg",
     description: "Simple and elegant glass frame for modern decor.",
-    images: ["/images/frames/frame4.jpg", "/images/frames/frame4b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper.jpg", "/images/wallpaperflare.com_wallpaper1.jpg"],
     category: "Glass Frame"
   },
   {
@@ -44,9 +44,9 @@ export const products = [
     title: "Luxury Gold Frame",
     price: 3299,
     size: "20x30 inches",
-    image: "/images/frames/frame5.jpg",
+    image: "/images/wallpaperflare.com_wallpaper1.jpg",
     description: "Premium gold-plated frame for masterpiece artwork.",
-    images: ["/images/frames/frame5.jpg", "/images/frames/frame5b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper1.jpg", "/images/wallpaperflare.com_wallpaper (1).jpg"],
     category: "Luxury Frame"
   },
   {
@@ -54,9 +54,9 @@ export const products = [
     title: "Custom Canvas Frame",
     price: 1899,
     size: "14x18 inches",
-    image: "/images/frames/frame6.jpg",
+    image: "/images/wallpaperflare.com_wallpaper (1).jpg",
     description: "Handcrafted canvas frame perfect for paintings.",
-    images: ["/images/frames/frame6.jpg", "/images/frames/frame6b.jpg"],
+    images: ["/images/wallpaperflare.com_wallpaper (1).jpg", "/images/wallpaperflare.com_wallpaper.jpg"],
     category: "Canvas Frame"
   }
 ];

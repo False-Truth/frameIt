@@ -9,6 +9,13 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
     }
   };
 
+  const handleImageError = (e) => {
+    console.error('Image failed to load:', coverImage);
+    // Set a placeholder background color
+    e.target.style.backgroundColor = '#e5e7eb';
+    e.target.alt = 'Image not available';
+  };
+
   return (
     <Link 
       to={`/gallery/${id}`}
@@ -21,10 +28,11 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
           src={coverImage}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          onError={handleImageError}
         />
         
         {/* Overlay on Hover */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center pointer-events-none">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center space-x-2 text-white">
             <Eye className="w-5 h-5" />
             <span className="text-sm font-medium">View Details</span>
@@ -33,7 +41,7 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
 
         {/* Category Badge */}
         <div className="absolute top-3 left-3">
-          <span className="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
             {category}
           </span>
         </div>
@@ -52,7 +60,7 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
       {/* Content */}
       <div className="p-4">
         {/* Title */}
-        <h3 className="font-semibold text-gray-900 text-lg mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">
+        <h3 className="font-semibold text-black text-lg mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
           {title}
         </h3>
 
@@ -62,7 +70,7 @@ const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {
         </p>
 
         {/* View Details Link */}
-        <div className="flex items-center text-amber-600 group-hover:text-amber-700 transition-colors">
+        <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors">
           <span className="text-sm font-medium">View Project</span>
           <svg 
             className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" 

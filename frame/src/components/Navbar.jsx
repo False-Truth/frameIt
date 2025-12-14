@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-yellow-400' : 'bg-white/95 backdrop-blur-sm'
+      isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -37,14 +37,14 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
-            <div className="bg-blue-600 text-white px-2 py-1 rounded-md font-bold text-sm">
+            <div className="bg-blue-600 text-white px-2 py-2 rounded-md font-bold text-sm">
               PPS
             </div>
-            <span className="font-semibold text-gray-800 text-base">Photo Frames</span>
+            <span className="font-semibold text-black text-base">Photo Frames</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 px-20">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -52,7 +52,7 @@ const Navbar = () => {
                 className={`font-medium transition-colors ${
                   isActive(link.path)
                     ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
-                    : 'text-gray-700 hover:text-blue-600'
+                    : 'text-black hover:text-blue-600'
                 }`}
               >
                 {link.label}
@@ -64,7 +64,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 p-2"
+              className="text-black hover:text-blue-600 p-2"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
@@ -79,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200">
+          <div className="md:hidden border-t border-blue-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <Link
@@ -88,8 +88,8 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(link.path)
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-white bg-blue-600'
+                      : 'text-black hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   {link.label}
