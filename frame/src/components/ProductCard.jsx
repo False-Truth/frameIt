@@ -4,8 +4,7 @@ import Card from './ui/Card';
 import Button from './ui/Button';
 
 const getBaseUrl = () => {
-  if (import.meta.env.DEV) return '/';
-  return '/frameIt/';
+  return './';
 };
 
 const formatImagePath = (imagePath) => {

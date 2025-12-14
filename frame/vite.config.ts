@@ -27,6 +27,6 @@ export default defineConfig({
       }
     }
   },
-  base: process.env.NODE_ENV === 'production' ? '/frameIt/' : '/',
+  base: './',
   publicDir: 'public'
 })
