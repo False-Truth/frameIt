@@ -60,25 +60,25 @@ const ContactPage = () => {
     {
       icon: <Phone className="w-5 h-5" />,
       label: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 98107 74052',
       description: 'Mon-Sat, 9AM-7PM'
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: 'info@punephotoshop.com',
+      value: 'ppssharmaartgallery@gmail.com',
       description: 'We respond within 24 hours'
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: 'Address',
-      value: 'Shop No. 12, MG Road, Pune - 411001',
+      value: 'Near Sikanderpur Metro station, Opp DLF Phase 2, In Front of Metro Pillar No 67 A, Gurugram, Haryana 122002',
       description: 'Visit our showroom'
     },
     {
       icon: <Clock className="w-5 h-5" />,
       label: 'Business Hours',
-      value: 'Mon-Sat: 9AM-7PM, Sun: 10AM-6PM',
+      value: 'Wed-Mon: 11AM-8PM, Tue: 11AM-7PM',
       description: 'Closed on major holidays'
     }
   ];
@@ -130,14 +130,14 @@ const ContactPage = () => {
               <h3 className="font-semibold text-gray-900 mb-3">Quick Actions</h3>
               <div className="space-y-2">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919810774052"
                   className="flex items-center text-amber-600 hover:text-amber-700 text-sm font-medium"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </a>
                 <a
-                  href="mailto:info@punephotoshop.com"
+                  href="ppssharmaartgallery@gmail.com"
                   className="flex items-center text-amber-600 hover:text-amber-700 text-sm font-medium"
                 >
                   <Mail className="w-4 h-4 mr-2" />
@@ -319,9 +319,9 @@ const ContactPage = () => {
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-amber-600 mx-auto mb-3" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Our Showroom</h3>
-                  <p className="text-gray-600">Shop No. 12, MG Road, Pune - 411001</p>
+                  <p className="text-gray-600">Opp DLF Phase 2, In Front of Metro Pillar No 67 A, Gurugram, Haryana 122002</p>
                   <a
-                    href="https://maps.google.com/?q=Pune+Photo+Shop+MG+Road"
+                    href="https://www.google.com/maps/place/PPS+Creation+Photo+Framing+%26+Arts/@28.4807629,76.9123422,11z/data=!4m10!1m2!2m1!1sppsharma+photo+framing!3m6!1s0x390d192f0835160f:0xf05aa1473bc52ec9!8m2!3d28.4808769!4d77.0921199!15sChZwcHNoYXJtYSBwaG90byBmcmFtaW5nWhgiFnBwc2hhcm1hIHBob3RvIGZyYW1pbmeSARJwaWN0dXJlX2ZyYW1lX3Nob3CaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTm9ia28yTm01UlJSQULgAQD6AQQIABAf!16s%2Fg%2F12hp_ptwr?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium mt-3"
