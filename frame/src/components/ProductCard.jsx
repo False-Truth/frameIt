@@ -11,20 +11,11 @@ const ProductCard = ({
   description, 
   id 
 }) => {
-  // Helper function to get correct image path
-  const getImageSrc = (imagePath) => {
-    if (imagePath.startsWith('http')) {
-      return imagePath;
-    }
-    // Remove leading slash if present to avoid double slashes
-    const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-    return `${import.meta.env.BASE_URL}${cleanPath}`;
-  };
   return (
     <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       <div className="aspect-square overflow-hidden bg-blue-100 relative">
         <img
-          src={getImageSrc(image)}
+          src={image}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />

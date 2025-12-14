@@ -112,7 +112,7 @@ const ProductDetailPage = () => {
             ) : (
               <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
                 <img
-                  src={`${import.meta.env.BASE_URL}${product.image}`}
+                  src={product.image}
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />

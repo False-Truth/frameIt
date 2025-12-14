@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
+};
+
 const ImageSlider = ({ 
   images, 
   className = '' 
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Check if image path already includes base URL or is absolute
-  const getImageSrc = (imagePath) => {
-    if (imagePath.startsWith('http')) {
-      return imagePath;
-    }
-    // Remove leading slash if present to avoid double slashes
-    const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
-    return `${import.meta.env.BASE_URL}${cleanPath}`;
-  };
 
   if (!images || images.length === 0) {
     return (
@@ -45,7 +40,7 @@ const ImageSlider = ({
     <div className={`relative ${className}`}>
       <div className="aspect-square">
         <img
-          src={getImageSrc(images[currentIndex])}
+          src={`${getBaseUrl()}${images[currentIndex]}`}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover rounded-lg"
         />

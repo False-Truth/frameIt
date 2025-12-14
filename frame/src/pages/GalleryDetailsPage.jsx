@@ -17,6 +17,10 @@ import {
   Package
 } from 'lucide-react';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
+};
 
 const GalleryDetailsPage = () => {
   const { id } = useParams();
@@ -175,7 +179,7 @@ const GalleryDetailsPage = () => {
               ) : (
                 <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
                   <img
-                    src={`${import.meta.env.BASE_URL}${project.coverImage}`}
+                    src={`${getBaseUrl()}${project.coverImage}`}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />
@@ -296,7 +300,7 @@ const GalleryDetailsPage = () => {
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
                     <img
-                      src={`${import.meta.env.BASE_URL}${item.coverImage}`}
+                      src={`${getBaseUrl()}${item.coverImage}`}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />

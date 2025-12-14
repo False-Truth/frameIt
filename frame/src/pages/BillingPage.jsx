@@ -36,23 +36,16 @@ const BillingPage = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            {/* Back to Form Button - Left aligned with proper spacing */}
-            <div className="mb-8">
-              <button
-                onClick={handleBackToForm}
-                className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors shadow-sm"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Form
-              </button>
-            </div>
-            
-            {/* Bill Preview Heading - Centered with proper spacing */}
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">Bill Preview</h1>
-              <p className="text-slate-600">Review your bill details before downloading</p>
-            </div>
+          <div className="flex justify-between items-center mb-8">
+            <button
+              onClick={handleBackToForm}
+              className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Form
+            </button>
+            <h1 className="text-3xl font-bold text-slate-900">Bill Preview</h1>
+            <div className="w-32"></div>
           </div>
           
           <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8">

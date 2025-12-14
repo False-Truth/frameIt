@@ -19,6 +19,10 @@ const Navbar = () => {
     return location.pathname.startsWith(path);
   };
 
+  const handleNavLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Products' },
@@ -36,6 +40,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
+            onClick={handleNavLinkClick}
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
             <div className="bg-blue-600 text-white px-2 py-2 rounded-md font-bold text-sm">
@@ -50,6 +55,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={handleNavLinkClick}
                 className={`font-medium transition-colors ${
                   isActive(link.path)
                     ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
@@ -86,7 +92,10 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.scrollTo(0, 0);
+                  }}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(link.path)
                       ? 'text-white bg-blue-600'
