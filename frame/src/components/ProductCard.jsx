@@ -4,7 +4,7 @@ import Card from './ui/Card';
 import Button from './ui/Button';
 
 const getBaseUrl = () => {
-  return './';
+  return '/';
 };
 
 const formatImagePath = (imagePath) => {

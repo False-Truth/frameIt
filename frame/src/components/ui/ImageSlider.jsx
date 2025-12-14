@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const getBaseUrl = () => {
-  return './';
+  return '/';
 };
 
 const ImageSlider = ({ 

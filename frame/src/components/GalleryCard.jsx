@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Eye, Calendar } from 'lucide-react';
 
 const getBaseUrl = () => {
-  return './';
+  return '/';
 };
 
 const GalleryCard = ({ id, title, category, coverImage, date, onClick }) => {

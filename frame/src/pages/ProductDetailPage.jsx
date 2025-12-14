@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 
 const getBaseUrl = () => {
-  return './';
+  return '/';
 };
 
 const ProductDetailPage = () => {
