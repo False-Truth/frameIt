@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
+const getBaseUrl = () => {
+  if (import.meta.env.DEV) return '/';
+  return '/frameIt/';
+};
+
 const ImageSlider = ({ 
   images, 
   className = '' 
@@ -35,7 +40,7 @@ const ImageSlider = ({
     <div className={`relative ${className}`}>
       <div className="aspect-square">
         <img
-          src={images[currentIndex]}
+          src={`${getBaseUrl()}${images[currentIndex]}`}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover rounded-lg"
         />
