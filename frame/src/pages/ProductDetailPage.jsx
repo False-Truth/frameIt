@@ -46,7 +46,35 @@ const ProductDetailPage = () => {
       alert('Please select a size');
       return;
     }
-    // Add to cart logic here
+    
+    // Get existing cart from localStorage
+    const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Check if product already in cart
+    const existingItemIndex = existingCart.findIndex(item => 
+      item.id === product.id && item.selectedSize === selectedSize
+    );
+    
+    if (existingItemIndex > -1) {
+      // Update quantity if item already exists
+      existingCart[existingItemIndex].quantity += 1;
+    } else {
+      // Add new item to cart
+      const cartItem = {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image,
+        selectedSize: selectedSize || null,
+        quantity: 1,
+        size: product.size,
+        material: product.material || 'High-quality materials'
+      };
+      existingCart.push(cartItem);
+    }
+    
+    // Save updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(existingCart));
     alert('Product added to cart!');
   };
 
