@@ -9,6 +9,9 @@ import ContactPage from './pages/ContactPage';
 import BillingPage from './pages/BillingPage';
 import DashboardPage from './pages/DashboardPage';
 import DatabaseQueryPage from './pages/DatabaseQueryPage';
+import SignInPage from './pages/SignInPage';
+import SignOutPage from './pages/SignOutPage';
+import SignUpPage from './pages/SignUpPage';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
           <Route path="/gallery/:id" element={<GalleryDetailsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/billing" element={<BillingPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signout" element={<SignOutPage />} />
         </Routes>
       </Layout>
     </Router>

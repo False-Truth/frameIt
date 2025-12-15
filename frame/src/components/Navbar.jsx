@@ -1,10 +1,24 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check authentication status
+    const authStatus = localStorage.getItem('isAuthenticated') === 'true';
+    setIsAuthenticated(authStatus);
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +45,23 @@ const Navbar = () => {
     { path: '/billing', label: 'Billing' },
     { path: '/contact', label: 'Contact' },
   ];
+
+  const handleSignOut = () => {
+    localStorage.removeItem('isAuthenticated');
+    setIsAuthenticated(false);
+    navigate('/signin');
+  };
+
+  useEffect(() => {
+    // Listen for authentication changes
+    const handleStorageChange = () => {
+      const authStatus = localStorage.getItem('isAuthenticated') === 'true';
+      setIsAuthenticated(authStatus);
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -66,6 +97,28 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Authentication Links */}
+            {isAuthenticated ? (
+              <button
+                onClick={handleSignOut}
+                className="font-medium text-red-600 hover:text-red-700 border-b-2 border-transparent hover:border-red-600 pb-1 transition-colors"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                to="/signin"
+                onClick={handleNavLinkClick}
+                className={`font-medium transition-colors ${
+                  isActive('/signin')
+                    ? 'text-blue-600 border-b-2 border-blue-600 pb-1' 
+                    : 'text-black hover:text-blue-600'
+                }`}
+              >
+                Sign In
+              </Link>
+            )}
           </div>
 
           {/* Mobile menu button */}
