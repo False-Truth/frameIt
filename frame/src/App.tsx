@@ -7,6 +7,8 @@ import GalleryPage from './pages/GalleryPage';
 import GalleryDetailsPage from './pages/GalleryDetailsPage';
 import ContactPage from './pages/ContactPage';
 import BillingPage from './pages/BillingPage';
+import DashboardPage from './pages/DashboardPage';
+import DatabaseQueryPage from './pages/DatabaseQueryPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/database-query" element={<DatabaseQueryPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
